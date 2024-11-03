@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Django Tube</title>
+    <title>Vid Hub</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -50,8 +50,18 @@
 </head>
 <body>
 
+<!-- templates/home.html-->
+{% extends "base_generic.html" %}
+
+{% block title %}Home{% endblock %}
+
+
+
+
+{% block content %}
+<a href="/"><h1 class="text-center mt-4">Django Tube</h1></a>
 <div class="container">
-    <a href="/"><h1 class="text-center mt-4">Django Tube</h1></a>
+    
     <div class="row mt-5">
         {% if videos %}
             {% for video in videos %}
@@ -63,15 +73,43 @@
                         <h2 class="video-title">{{ video.name }}</h2>
                         <p class="video-details">{{ video.created_at|date:"F d, Y" }}</p>
                         <p class="video-details">Duration: {{ video.duration }} seconds</p>
+                        {% if perms.catalog.can_add_video %}
+                        <form action="{% url 'upload_video' video.slug %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Approve video</button>
+                            </form>
+                            <!-- We can mark a BookInstance as returned. -->
+                            <!-- Perhaps add code to link to a "book return" view here. -->
+                        {% endif %}
                     </div>
                 </div>
+            
+            
+
             {% endfor %}
         {% else  %}
 
         <h3 class="text-center mx-auto"> No Videos Found</h3>
         {% endif %}
+
+        
     </div>
+    
 </div>
+<div class="container">
+        
+    {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    <form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Log Out</button>
+    </form>
+    {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
+    </div>
+{% endblock %}
 
 </body>
 </html>

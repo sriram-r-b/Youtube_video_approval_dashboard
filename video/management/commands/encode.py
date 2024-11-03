@@ -7,7 +7,6 @@ from video.models import Video
 
 class Command(BaseCommand):
     help = 'Optimize Video'
-
     def handle(self, *args, **kwargs):
         try:
             obj = Video.objects.filter(status='Pending').first()
