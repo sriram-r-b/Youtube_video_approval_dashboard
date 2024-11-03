@@ -2,10 +2,11 @@
 
 ### Forked from Django Video Encoding and Streaming App
 
-This Django application is designed for video Approval by Youtube Channel Owners. This repo is a microservice implementation of two microservices combo. The other microservice being Youtube Archive Database(an nosql db integrated with firestore to provide free storage of 1 gb data per user). Both microservices as a whole provide a complete solution for channels that need to maintain uniqueness within their content/analysis .
+This Django application is designed for video Approval by Youtube Channel Owners. This repo is a microservice implementation of two microservices combo. The other microservice being [Youtube Archive Database](https://github.com/sriram-r-b/Youtube-video-archive) . The archive Database service features a nosql db integrated with firestore to provide free storage of 1 gb data per user. Both microservices as a whole provide a complete solution for channels that need to maintain uniqueness within their content/analysis .
 
 This client has a oauth 2 client for the Youtube Archive Database
 
+## [Demo](https://dashboard-private.onrender.com/) 
 
 ##  Features
 
