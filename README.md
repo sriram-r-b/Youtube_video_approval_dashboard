@@ -6,7 +6,10 @@ This Django application is designed for video Approval by Youtube Channel Owners
 
 This client has a oauth 2 client for the Youtube Archive Database
 
-## [Demo](https://dashboard-private.onrender.com/) 
+## [Live Site](https://dashboard-private.onrender.com/) 
+
+## Video Demo 
+https://github.com/user-attachments/assets/46d09687-bf24-4d7f-8022-3016c84aad3e
 
 ##  Features
 
@@ -18,6 +21,10 @@ This client has a oauth 2 client for the Youtube Archive Database
 -   Extensible: Easily extend the functionality to include more video-related features or customization.
 -   Render Compatible : Doesnt need a persistent DB . can pull and upload data to a external db (currently integrations provided with youtube video archive microservice).
 This enables indefinitely free hosting(as long as involved companies pricing policy soesnt change.) 
+
+
+
+
 
 ## Installation Process
 1. Clone Project from github 
