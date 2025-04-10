@@ -8,7 +8,7 @@ This client has a oauth 2 client for the Youtube Archive Database
 
 ## [Live Site](https://dashboard-private.onrender.com/) 
 
-Site might be down since the entire hosting is done on free tier webservices
+Site might be down sometimes since the entire hosting is done on free tier webservices.
 ## Video Demo 
 https://github.com/user-attachments/assets/46d09687-bf24-4d7f-8022-3016c84aad3e
 
